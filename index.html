@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Destinations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('C:\Users\91994\OneDrive\Desktop\novanectar\travel-transformed.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: #fff; /* Adjust text color for better contrast */
+        }
+
+        header {
+            background: rgba(0, 121, 107, 0.9); /* Add slight transparency */
+            color: #fff;
+            padding: 1em 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            background: #004d40;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #80cbc4;
+        }
+
+        h2 {
+            color: #ffefba; /* Adjust text color */
+            text-shadow: 1px 1px 3px #000;
+            font-size: 2.5rem;
+            margin-top: 1em;
+        }
+
+        .destination-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            flex-wrap: wrap;
+            margin: 2em 0;
+        }
+
+        .destination {
+            background: rgba(251, 233, 231, 0.9); /* Add transparency */
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            max-width: 300px;
+        }
+
+        .destination:hover {
+            transform: translateY(-5px);
+        }
+
+        .destination img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        .destination h3 {
+            color: #d84315;
+            font-size: 1.5rem;
+        }
+
+        .luna-travels-banner {
+            font-size: 2rem;
+            color: #fff; /* Text color for contrast */
+            font-weight: bold;
+            margin: 1.5em 0;
+            background: rgba(108, 92, 231, 0.8); /* Stylish purple with transparency */
+            padding: 0.5em;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        footer {
+            background: rgba(0, 77, 64, 0.9); /* Add transparency */
+            color: #fff;
+            padding: 1em;
+            margin-top: 2em;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        .social-icon img {
+            width: 40px; /* Adjust the size of the social icons */
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-icon img:hover {
+            transform: rotate(10deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Explore the World</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="itineraries.html">Itineraries</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Luna Travels Banner -->
+        <div class="luna-travels-banner">Welcome to Luna Travels</div>
+
+        <section id="destinations">
+            <h2>Top Destinations</h2>
+            <div class="destination-grid">
+                <div class="destination">
+                    <img src="C:\Users\91994\OneDrive\Desktop\novanectar\paris.jpeg" alt="Paris, France">
+                    <h3>Paris, France</h3>
+                    <p style="color:black;">The City of Light awaits with its iconic landmarks and rich culture.</p>
+                </div>
+                <div class="destination">
+                    <img src="C:\Users\91994\OneDrive\Desktop\novanectar\japan.jpg" alt="Tokyo, Japan">
+                    <h3>Tokyo, Japan</h3>
+                    <p style="color:black;">Explore the bustling streets and serene temples of Tokyo.</p>
+                </div>
+                <div class="destination">
+                    <img src="C:\Users\91994\OneDrive\Desktop\novanectar\newyork.jpeg" alt="New York, USA">
+                    <h3>New York, USA</h3>
+                    <p style="color:black;">The Big Apple offers endless attractions and vibrant energy.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://facebook.com" class="social-icon" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="https://twitter.com" class="social-icon" target="_blank">
+                <img src="C:\Users\91994\OneDrive\Desktop\novanectar\twit.png" alt="Twitter">
+            </a>
+            <a href="https://instagram.com" class="social-icon" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; 2024 Explore the World. All rights reserved.</p>
+    </footer>
+</body>
+</html>

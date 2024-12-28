@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share your reviews about Luna Travels.">
+    <meta name="keywords" content="travel, reviews, feedback, testimonials">
+    <meta name="author" content="Luna Travels">
+    <title>Reviews - Yalini Travels</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Light background */
+            color: #333; /* Neutral text color */
+        }
+
+        header {
+            background-color: rgba(0, 121, 107, 0.9); /* Green header */
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: rgba(0, 77, 64, 0.9); /* Dark green footer */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        .review-form {
+            margin-top: 20px;
+        }
+
+        .reviews {
+            margin-top: 20px;
+            background-color: #e0f2f1; /* Light green background for reviews */
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333; /* Dark text color */
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #388E3C; /* Darker green on hover */
+        }
+
+        a {
+            color: #4CAF50; /* Link color */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reviews</h1>
+        <p>Share your experience with Luna Travels!</p>
+    </header>
+
+    <div class="container">
+        <h2>Share Your Review</h2>
+        <form id="reviewForm" class="review-form">
+            <label for="reviewName">Full Name:</label>
+            <input type="text" id="reviewName" name="reviewName" required>
+
+            <label for="reviewText">Your Review:</label>
+            <textarea id="reviewText" name="reviewText" rows="4" placeholder="Share your travel experience..." required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <div class="reviews" id="submittedReviews">
+            <h3>Recent Reviews</h3>
+            <p>No reviews yet. Be the first to share your experience!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Luna Travels. All rights reserved. <a href="index.html">Back to Home</a></p>
+    </footer>
+
+    <script>
+        const reviewForm = document.getElementById('reviewForm');
+        const submittedReviews = document.getElementById('submittedReviews');
+
+        // Example reviews with formatted HTML
+        const recentReviews = [
+            { 
+                name: 'John Doe', 
+                reviewText: 'Had an <strong>amazing experience</strong> with Luna Travels. The service was <em>top-notch</em>!' 
+            },
+            { 
+                name: 'Jane Smith', 
+                reviewText: 'A <strong>wonderful trip</strong>! Highly recommend their services to anyone looking to travel. <a href="https://www.yalinitravel.com" target="_blank">Visit their website</a>.' 
+            },
+            { 
+                name: 'Carlos M.', 
+                reviewText: 'Very <strong>professional</strong> and reliable. I will definitely book again in the future. <img src="review-image.jpg" alt="Travel Image" width="100">' 
+            }
+        ];
+
+        // Function to display reviews
+        function displayReviews() {
+            if (recentReviews.length > 0) {
+                submittedReviews.innerHTML = '<h3>Recent Reviews</h3>';
+                recentReviews.forEach(review => {
+                    const reviewDiv = document.createElement('div');
+                    reviewDiv.innerHTML = `<p><strong>${review.name}</strong>: ${review.reviewText}</p>`;
+                    submittedReviews.appendChild(reviewDiv);
+                });
+            } else {
+                submittedReviews.innerHTML = '<h3>Recent Reviews</h3><p>No reviews yet. Be the first to share your experience!</p>';
+            }
+        }
+
+        // Display reviews on page load
+        displayReviews();
+
+        reviewForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('reviewName').value;
+            const reviewText = document.getElementById('reviewText').value;
+
+            // Add new review to the recent reviews array
+            recentReviews.push({ name, reviewText });
+
+            // Redisplay the reviews
+            displayReviews();
+
+            // Reset the form
+            reviewForm.reset();
+        });
+    </script>
+</body>
+</html>

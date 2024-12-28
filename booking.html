@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your travel with ease using Yalini Travels.">
+    <meta name="keywords" content="travel, booking, reservations">
+    <meta name="author" content="Yalini Travels">
+    <title>Book Now - Yalini Travels</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('file:///C:/Users/91994/OneDrive/Desktop/novanectar/booking-transformed.avif') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        header {
+            background-color: rgba(0, 121, 107, 0.9); /* Green header */
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8); /* White with opacity */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        .success-message {
+            color: #4CAF50;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: rgba(0, 77, 64, 0.9); /* Green footer */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Now</h1>
+        <p>Reserve your travel plans effortlessly.</p>
+    </header>
+
+    <div class="container">
+        <h2>Booking Form</h2>
+        <form id="bookingForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="destination">Destination:</label>
+            <select id="destination" name="destination" required>
+                <option value="">Select a destination</option>
+                <option value="Beach Paradise">Beach Paradise</option>
+                <option value="Mountain Adventure">Mountain Adventure</option>
+                <option value="Cultural Exploration">Cultural Exploration</option>
+            </select>
+
+            <label for="date">Travel Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="message">Additional Requests:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Let us know if you have any special requirements."></textarea>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+
+        <div class="success-message" id="successMessage" style="display: none;">
+            <p>Thank you for your booking! Here are your details:</p>
+            <ul id="bookingDetails"></ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Luna Travels. All rights reserved. <a href="index.html">Back to Home</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+
+            const detailsList = document.getElementById('bookingDetails');
+            detailsList.innerHTML = `
+                <li><strong>Name:</strong> ${name}</li>
+                <li><strong>Email:</strong> ${email}</li>
+                <li><strong>Phone:</strong> ${phone}</li>
+                <li><strong>Destination:</strong> ${destination}</li>
+                <li><strong>Travel Date:</strong> ${date}</li>
+                <li><strong>Requests:</strong> ${message || 'None'}</li>
+            `;
+
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
